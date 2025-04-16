@@ -1,5 +1,5 @@
-[!CAUTION]
-This project is still in development and has extremely limited functionality, most of it does not work.
+> [!CAUTION]
+> This project is still in development and has extremely limited functionality, most of it does not work.
 
 # Inertia: A Linux Backup App
 
