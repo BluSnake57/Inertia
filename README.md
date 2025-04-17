@@ -3,6 +3,11 @@
 
 # Inertia: A Linux Backup App
 
+## TODO:
+
+* Have Directory backup list formatted as well as Application list
+* Get Application backups working
+
 ## Summary
 
 Unlike most other backup utilities this project is focused on backing up your settings be that installed packages,
