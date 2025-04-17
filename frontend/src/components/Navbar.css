@@ -1,9 +1,33 @@
 .navbar {
     display: block;
     margin: auto;
-    padding: 10% 0 0;
+    background-color: white;
+    text-align: left;
+    height: 50px;
+    padding: 2% 0%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-origin: content-box;
 }
+
+.radio {
+    visibility: hidden;
+}
+
+.label {
+
+    background-color: #04AA6D; /* Green */
+    border: none;
+    width: 100px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.radio:checked + .label {
+    transform: translateY(10%);
+  }

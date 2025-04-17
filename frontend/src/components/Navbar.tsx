@@ -2,6 +2,7 @@ import React, { Component, Dispatch, ReactElement, SetStateAction, useState } fr
 import Directories from './Directories';
 import Applications from './Applications';
 import Packages from './Packages';
+import './Navbar.css'
 
 
 interface SelectedPage {
@@ -9,40 +10,35 @@ interface SelectedPage {
     setSelectedValue: React.Dispatch<React.SetStateAction<number>>;
   }
 
+
 function Navbar({selectedValue, setSelectedValue} : SelectedPage) {
     const handleRadioChange = (value:number) => {
         setSelectedValue(value);
     };
 
+    const navbarElement = (name: string, pageValue: number) => {
+        return (
+            <>
+                <input type="radio" id={name} value={pageValue}
+                    checked={ selectedValue === pageValue }
+                    onChange={() =>
+                        handleRadioChange(pageValue)
+                    }
+                    className='radio'
+                />
+                <label className='label' htmlFor={name}>{name}</label>
+            </>
+        )
+    }
+
     return (
         <nav className='navbar'>
-            <div>
-                <input type="radio" id="Applications" value={0}
-                    checked={ selectedValue === 0 }
-                    onChange={() =>
-                        handleRadioChange(0)
-                    }
-                />
-                <label>Applications</label>
-            </div>
-            <div>
-                <input type="radio" id="Packages" value={1}
-                    checked={ selectedValue === 1 }
-                    onChange={() =>
-                        handleRadioChange(1)
-                    }
-                />
-                <label>Packages</label>
-            </div>
-            <div>
-                <input type="radio" id="Directories" value={2}
-                    checked={ selectedValue === 2 }
-                    onChange={() =>
-                        handleRadioChange(2)
-                    }
-                />
-                <label>Directories</label>
-            </div>
+
+            {navbarElement("Applications", 0)}
+
+            {navbarElement("Packages", 1)}
+
+            {navbarElement("Directories", 2)}
             
         </nav>
     )

@@ -13,14 +13,26 @@ function App() {
     function changePage(value:Number) {
         switch(value) {
             case 0:
-                return (<Applications/>);
+                return (
+                    <div className='main-content'>
+                        <Applications/>
+                    </div>
+                );
             case 1:
-                return (<Packages/>);
+                return (
+                    <div className='main-content'>
+                        <Packages/>
+                    </div>
+                );
             case 2:
-                return (<Directories/>);
+                return (
+                    <div className='main-content'>
+                        <Directories/>
+                    </div>
+                );
             default:
                 return (
-                    <label>Something went wrong</label>
+                    <label className='main-content'>Something went wrong</label>
                 )
         }
 
