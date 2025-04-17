@@ -15,7 +15,7 @@ var extensions_to_remove = []string{"com", "org"}
 // Any file with any of these strings in it will be ignored and not shown
 // Purpose being is these are apps are more system apps and should be covered
 // by directory backup
-var apps_to_ignore = []string{"freedesktop", "gnome"}
+var apps_to_ignore = []string{"freedesktop", "gnome", "ibus", "gtk3"}
 
 // Don't need this at the moment but may be neccesary if I want to return a list of what was backed up and to where
 // It will also be neccesary when it comes to saving the metadata for the backup
