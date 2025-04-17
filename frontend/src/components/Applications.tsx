@@ -37,7 +37,6 @@ function Applications() {
                         {appList.map((item, index) => App_Element(item, index, appList, setAppList, selectedAppList, setSelectedAppList))}
                     </tbody>
                 </table>
-                <line className='border' x1={0} x2={0} y1={0} y2={100} stroke='white' strokeWidth={5}/>
                 <table className='selected-table'>
                     <label>Selected</label>
                     <tbody className='selected-table-body'>
