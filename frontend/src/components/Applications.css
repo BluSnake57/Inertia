@@ -1,0 +1,28 @@
+.tables {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.unselected-table {
+    order: 0;
+}
+
+.unselected-table-body {
+    text-align: left;
+    padding: 2% 0%;
+}
+
+.border {
+    order: 1;
+}
+
+.selected-table {
+    order: 2;
+}
+
+.selected-table-body {
+    text-align: left;
+    padding: 2% 0%;
+}
