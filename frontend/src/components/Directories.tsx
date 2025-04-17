@@ -4,7 +4,7 @@ import {Backup_Directories} from "../../wailsjs/go/main/App"
 import {Pick_Directory} from "../../wailsjs/go/main/App"
 
 function Directories() {
-    const [result, setResult] = useState("Please Click Add Directory Button")
+    const [result, setResult] = useState("")
     const [directoryList, setDirectoryList] = useState(Array<string>)
     const getBackupResults = (results: boolean[]) => path_backup_result(results);
 
@@ -25,7 +25,10 @@ function Directories() {
     }
 
     function add_directory(path:string) {
-        setDirectoryList([...directoryList, path]);
+        if (path != "") {
+            setDirectoryList([...directoryList, path]);
+        }
+        
     }
 
     return(
@@ -37,7 +40,7 @@ function Directories() {
                 <button id="button" className='button' onClick={path_backup}>Backup</button>
                 <table>
                     <tbody>
-                        {directoryList.map((item, index) => Directory_Element(item, index))}
+                        {directoryList.map((item, index) => Directory_Element(item, index, directoryList, setDirectoryList))}
                     </tbody>
                 </table>
             </div>
@@ -45,13 +48,17 @@ function Directories() {
     )
 }
 
-function Directory_Element(app_name:string, index: number) {
+function Directory_Element(directory:string, index: number, directoryList: Array<string>, setDirectoryList: React.Dispatch<React.SetStateAction<string[]>>) {
 
+    function remove_directory() {
+        directoryList = directoryList.filter(e => e !== directory);
+        setDirectoryList([...directoryList])
+    }
 
     return (
         <tr>
-            <td key={index}>{app_name}</td>
-            <input key={index} type="checkbox"/>
+            <td key={index}>{directory}</td>
+            <input key={index} type="button" onClick={() => remove_directory()}/>
         </tr>
     )
 }
