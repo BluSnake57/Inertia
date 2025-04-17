@@ -1,6 +1,6 @@
 import React from 'react';
-import {useState} from 'react';
-import {Get_App_List} from "../../wailsjs/go/main/App"
+import { useState } from 'react';
+import { Get_App_List } from "../../wailsjs/go/main/App"
 import './Applications.css'
 
 
@@ -11,7 +11,7 @@ interface App_List {
 function Applications() {
     const [appList, setAppList] = useState(Array<string>)
     const [selectedAppList, setSelectedAppList] = useState(Array<string>)
-    const app_list: App_List = {selected_apps: []}
+    const app_list: App_List = { selected_apps: [] }
 
     function get_app_list() {
         Get_App_List().then(set_app_list);
@@ -49,7 +49,7 @@ function Applications() {
 }
 
 
-function App_Element(app_name:string, index: number, appList: Array<string>, setAppList: React.Dispatch<React.SetStateAction<string[]>>, selectedAppList: Array<string>, setSelectedAppList: React.Dispatch<React.SetStateAction<string[]>>) {
+function App_Element(app_name: string, index: number, appList: Array<string>, setAppList: React.Dispatch<React.SetStateAction<string[]>>, selectedAppList: Array<string>, setSelectedAppList: React.Dispatch<React.SetStateAction<string[]>>) {
 
     function selectionChange() {
         setSelectedAppList([...selectedAppList, app_name])
@@ -60,7 +60,7 @@ function App_Element(app_name:string, index: number, appList: Array<string>, set
     return (
         <tr>
             <td key={index}>{app_name}</td>
-            <input key={index} type="button" onClick={() => selectionChange()}/>
+            <input key={index} type="button" onClick={() => selectionChange()} />
         </tr>
     )
 }

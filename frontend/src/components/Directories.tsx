@@ -1,7 +1,7 @@
 import React from 'react';
-import {useState} from 'react';
-import {Backup_Directories} from "../../wailsjs/go/main/App"
-import {Pick_Directory} from "../../wailsjs/go/main/App"
+import { useState } from 'react';
+import { Backup_Directories } from "../../wailsjs/go/main/App"
+import { Pick_Directory } from "../../wailsjs/go/main/App"
 
 function Directories() {
     const [result, setResult] = useState("")
@@ -24,14 +24,14 @@ function Directories() {
         Pick_Directory().then(add_directory);
     }
 
-    function add_directory(path:string) {
+    function add_directory(path: string) {
         if (path != "") {
             setDirectoryList([...directoryList, path]);
         }
-        
+
     }
 
-    return(
+    return (
         <div>
             <div>Backup Directories</div>
             <div>{result}</div>
@@ -48,7 +48,7 @@ function Directories() {
     )
 }
 
-function Directory_Element(directory:string, index: number, directoryList: Array<string>, setDirectoryList: React.Dispatch<React.SetStateAction<string[]>>) {
+function Directory_Element(directory: string, index: number, directoryList: Array<string>, setDirectoryList: React.Dispatch<React.SetStateAction<string[]>>) {
 
     function remove_directory() {
         directoryList = directoryList.filter(e => e !== directory);
@@ -58,7 +58,7 @@ function Directory_Element(directory:string, index: number, directoryList: Array
     return (
         <tr>
             <td key={index}>{directory}</td>
-            <input key={index} type="button" onClick={() => remove_directory()}/>
+            <input key={index} type="button" onClick={() => remove_directory()} />
         </tr>
     )
 }

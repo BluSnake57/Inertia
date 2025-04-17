@@ -8,11 +8,11 @@ import './Navbar.css'
 interface SelectedPage {
     selectedValue: Number;
     setSelectedValue: React.Dispatch<React.SetStateAction<number>>;
-  }
+}
 
 
-function Navbar({selectedValue, setSelectedValue} : SelectedPage) {
-    const handleRadioChange = (value:number) => {
+function Navbar({ selectedValue, setSelectedValue }: SelectedPage) {
+    const handleRadioChange = (value: number) => {
         setSelectedValue(value);
     };
 
@@ -20,7 +20,7 @@ function Navbar({selectedValue, setSelectedValue} : SelectedPage) {
         return (
             <>
                 <input type="radio" id={name} value={pageValue}
-                    checked={ selectedValue === pageValue }
+                    checked={selectedValue === pageValue}
                     onChange={() =>
                         handleRadioChange(pageValue)
                     }
@@ -39,7 +39,7 @@ function Navbar({selectedValue, setSelectedValue} : SelectedPage) {
             {navbarElement("Packages", 1)}
 
             {navbarElement("Directories", 2)}
-            
+
         </nav>
     )
 

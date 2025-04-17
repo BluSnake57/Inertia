@@ -1,6 +1,6 @@
 import React from 'react';
-import {useState} from 'react';
-import {Backup_Packages} from '../../wailsjs/go/main/App';
+import { useState } from 'react';
+import { Backup_Packages } from '../../wailsjs/go/main/App';
 
 
 function Packages() {
@@ -14,7 +14,7 @@ function Packages() {
     function package_backup_result(result: boolean) {
         if (result) {
             setResultText("package backup success")
-        }else{
+        } else {
             setResultText("package backup failed")
         }
     }
