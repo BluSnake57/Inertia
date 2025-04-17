@@ -1,5 +1,5 @@
 import React from 'react';
-import {useContext, useState} from 'react';
+import {useState} from 'react';
 import {Get_App_List} from "../../wailsjs/go/main/App"
 import './Applications.css'
 
@@ -20,7 +20,10 @@ function Applications() {
 
     function set_app_list(names: Array<string>) {
         setAppList([...names])
+        setSelectedAppList([])
     }
+
+    // Interesting idea of making the elements have css classes but then specifying different parents, ex .unselected-table-body + .table-element
 
     return (
         <div>
@@ -34,7 +37,7 @@ function Applications() {
                         {appList.map((item, index) => App_Element(item, index, appList, setAppList, selectedAppList, setSelectedAppList))}
                     </tbody>
                 </table>
-                <line className='border'/>
+                <line className='border' x1={0} x2={0} y1={0} y2={100} stroke='white' strokeWidth={5}/>
                 <table className='selected-table'>
                     <label>Selected</label>
                     <tbody className='selected-table-body'>

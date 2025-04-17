@@ -29,5 +29,6 @@
 }
 
 .radio:checked + .label {
+    background-color: #047c50; /* Green */
     transform: translateY(10%);
   }

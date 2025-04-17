@@ -6,23 +6,36 @@
 }
 
 .unselected-table {
+    background-color: black;
     order: 0;
+    margin: 2em;
+    flex: 1 1 0;
 }
 
 .unselected-table-body {
+    align-self: flex-start;
     text-align: left;
     padding: 2% 0%;
+    margin: 2em;
+    flex: 1 1 0;
 }
 
 .border {
+    background-color: white;
     order: 1;
 }
 
 .selected-table {
+    background-color: black;
     order: 2;
+    margin: 2em;
+    flex: 1 1 0;
 }
 
 .selected-table-body {
+    align-self: flex-start;
     text-align: left;
     padding: 2% 0%;
+    margin: 2em;
+    flex: 1 1 0;
 }
